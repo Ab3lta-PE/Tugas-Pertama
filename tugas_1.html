@@ -3,145 +3,106 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- Wajib untuk responsive: membuat lebar halaman mengikuti lebar layar HP/tablet -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Saya</title>
+
+    <!-- Menghubungkan file CSS (harus satu folder dengan index.html) -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <!-- SECTION 1: MENU -->
-    <table border="1" width="100%">
-        <tr>
-            <td align="center">
-                <a href="#home">Header</a>
-            </td>
-            <td align="center">
-                <a href="#biodata">Biodata</a>
-            </td>
-            <td align="center">
-                <a href="#portofolio">Portofolio</a>
-            </td>
-        </tr>
-    </table>
+    <div class="navbar">
+        <div class="brand"> <img src="header-logo-fik.webp" alt="Foto Profil" width="380" height="50"> </div>
+        <div class="menu">
+            <a href="#home">Header</a>
+            <a href="#biodata">Biodata</a>
+            <a href="#portofolio">Portofolio</a>
+        </div>
+    </div>
 
 
     <!-- SECTION 2: JUDUL KIRI DAN GAMBAR KANAN -->
-    <table border="1" width="100%" id="home">
-        <tr>
-            <td width="50%" align="left" valign="top">
-                <h1>Selamat Data Di Website Saya</h1>
-                <p>
-                    Ini adalah website portofolio saya.
-                </p>
-                <button>Pelajari Lebih Lanjut</button>
-            </td>
-            <td width="50%" align="center" valign="middle">
-                <img src="https://via.placeholder.com/200" alt="Foto Profil">
-            </td>
-        </tr>
-    </table>
+    <div class="hero" id="home">
+        <div class="hero-teks">
+            <h1>Selamat Datang di Website Saya</h1>
+            <p>
+                Ini adalah website portofolio saya.
+            </p>
+            <!-- Tombol dibuat dari link (a) agar bisa menuju bagian biodata -->
+            <a href="#biodata" class="tombol">Pelajari Lebih Lanjut</a>
+        </div>
+        <div class="hero-gambar">
+            <!-- Ganti foto-profil.jpg dengan nama file foto Anda (satu folder dengan index.html) -->
+            <img src="abelta.jpg" alt="Foto Profil"
+                 onerror="this.onerror=null; this.src='https://placehold.co/600x400/7c4dff/ffffff?text=Foto+Profil';">
+        </div>
+    </div>
+
 
     <!-- SECTION 3: BIODATA DENGAN BOX -->
-    <table border="1" width="100%" id="biodata">
-        <tr>
-            <td colspan="3" align="center">
-                <h2>About Me</h2>
-                <p>A Brief Introduction About My Self</p>
-            </td>
-        </tr>
+    <div class="section section-putih" id="biodata">
+        <div class="section-judul">
+            <h2>About Me</h2>
+            <p>A Brief Introduction About My Self</p>
+        </div>
 
-        <tr>
-            <td align="Center">Full Name</td>
-            <td align="Center">Education</td>
-            <td align="Center">Pekerjaan</td>
-        </tr>
-        <tr>
-            <td align="Center">Contact</td>
-            <td align="Center">Hobi</td>
-            <td align="Center">Alamat</td>
-        </tr>
-    </table>
+        <div class="biodata-grid">
+            <div class="kotak"><b>Full Name:</b> Abelta Putra Efendi</div>
+            <div class="kotak"><b>Education:</b> S1 Information Technology</div>
+            <div class="kotak"><b>Pekerjaan:</b> Frontend Developer</div>
+            <div class="kotak"><b>Contact:</b> abeltaputra@gmail.com</div>
+            <div class="kotak"><b>Hobi:</b> Membaca, Coding</div>
+            <div class="kotak"><b>Alamat:</b> Sidoarjo</div>
+        </div>
+    </div>
+
 
     <!-- SECTION 4: PORTOFOLIO -->
-    <table border="1" width="100%" id="portofolio">
+    <div class="section section-portofolio" id="portofolio">
+        <div class="section-judul">
+            <h2>Portofolio</h2>
+        </div>
 
-        <!-- Judul Portofolio -->
-        <tr>
-            <td colspan="3" align="center">
-                <h2>Portofolio</h2>
-            </td>
-        </tr>
+        <div class="portofolio-grid">
 
-        <!-- Jarak / ruang -->
-        <tr>
-            <td colspan="3" align="center">
-                <br>
-            </td>
-        </tr>
+            <!-- Proyek 1 -->
+            <div class="proyek">
+                <img src="https://placehold.co/400x250/ff8a1f/ffffff?text=Proyek+1" alt="Proyek 1">
+                <div class="proyek-isi">
+                    <h3>Proyek 1</h3>
+                    <p>Deskripsi proyek 1.</p>
+                </div>
+            </div>
 
-        <!-- Project 1 dan 2 -->
-        <tr>
-        
-        <td width="33%" align="center">
-            <img src="https://via.placeholder.com/350x200"
-                 alt="Proyek 1"
-                 width="350"
-                 height="200">
+            <!-- Proyek 2 -->
+            <div class="proyek">
+                <img src="https://placehold.co/400x250/0a6cd6/ffffff?text=Proyek+2" alt="Proyek 2">
+                <div class="proyek-isi">
+                    <h3>Proyek 2</h3>
+                    <p>Deskripsi proyek 2.</p>
+                </div>
+            </div>
 
-            <br>
+            <!-- Proyek 3 -->
+            <div class="proyek">
+                <img src="https://placehold.co/400x250/7c4dff/ffffff?text=Proyek+3" alt="Proyek 3">
+                <div class="proyek-isi">
+                    <h3>Proyek 3</h3>
+                    <p>Deskripsi proyek 3.</p>
+                </div>
+            </div>
 
-            <b>Proyek 1</b>
-
-            <p>
-                Deskripsi proyek 1.
-            </p>
-        </td>
-
-
-        <!-- Proyek 2 -->
-        <td width="33%" align="center">
-            <img src="https://via.placeholder.com/350x200"
-                 alt="Proyek 2"
-                 width="350"
-                 height="200">
-
-            <br>
-
-            <b>Proyek 2</b>
-
-            <p>
-                Deskripsi proyek 2.
-            </p>
-        </td>
+        </div>
+    </div>
 
 
-        <!-- Proyek 3 -->
-        <td width="34%" align="center">
-            <img src="https://via.placeholder.com/350x200"
-                 alt="Proyek 3"
-                 width="350"
-                 height="200">
-
-            <br>
-
-            <b>Proyek 3</b>
-
-            <p>
-                Deskripsi proyek 3.
-            </p>
-        </td>
-
-    </tr>
-
-        
-        
-        
-        
-        
-
-        
-        
-    
-    </table>
+    <!-- SECTION 5: FOOTER -->
+    <div class="footer">
+        &copy; 2026 Abelta Putra Efendi. All rights reserved.
+    </div>
 
 </body>
 

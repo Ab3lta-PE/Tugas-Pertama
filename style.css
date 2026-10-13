@@ -1,0 +1,399 @@
+/* =========================================================
+   style.css - Portofolio Saya
+   Daftar isi:
+   1. Variabel warna & reset
+   2. Navbar
+   3. Hero (judul kiri, gambar kanan)
+   4. Judul section (dipakai ulang)
+   5. Biodata (grid 3 kolom)
+   6. Portofolio (grid 3 kolom)
+   7. Footer
+   8. Responsive tablet
+   9. Responsive mobile
+   ========================================================= */
+
+
+/* =========================================================
+   1. VARIABEL WARNA & RESET
+   ========================================================= */
+
+/* :root = tempat menyimpan variabel. Dipanggil dengan var(--nama).
+   Jika ingin ganti warna, cukup ubah di sini. */
+:root {
+    --biru-tua: #0a2e7a;
+    --biru: #0a6cd6;
+    --biru-muda: #3fa9ff;
+    --ungu: #7c4dff;
+    --pink: #ff4f9a;
+    --oranye: #ff8a1f;
+    --hijau: #12b886;
+    --teks: #1f2a44;
+    --teks-lembut: #5b6785;
+    --kotak: #f1f4fb;
+}
+
+/* Reset: hapus jarak bawaan browser.
+   box-sizing: border-box -> padding & border dihitung di dalam lebar elemen. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;      /* klik menu = gulir halus */
+    scroll-padding-top: 70px;     /* supaya judul tidak tertutup navbar */
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    color: var(--teks);
+    background: #eef3fb;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;   /* gambar tidak boleh lebih lebar dari wadahnya */
+    display: block;
+}
+
+
+/* =========================================================
+   2. NAVBAR
+   ========================================================= */
+
+.navbar {
+    position: sticky;               /* menempel di atas saat halaman digulir */
+    top: 0;
+    z-index: 10;                    /* supaya tampil di atas konten lain */
+
+    display: grid;                  /* aktifkan grid */
+    grid-template-columns: 1fr auto; /* kolom 1 (brand) melebar, kolom 2 (menu) sesuai isi */
+    align-items: center;            /* rata tengah secara vertikal */
+
+    padding: 14px 32px;
+    background: linear-gradient(90deg, var(--biru) 60%);
+    box-shadow: 0 2px 10px rgba(0, 101, 184, 0.35);
+}
+
+.brand {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #eaba1d;
+}
+
+.menu {
+    display: grid;
+    grid-auto-flow: column;   /* item grid tersusun ke samping */
+    gap: 24px;                /* jarak antar menu */
+}
+
+.menu a {
+    color: #ffffff;
+    text-decoration: none;    /* hilangkan garis bawah link */
+    font-weight: 600;
+    padding: 4px 2px;
+    border-bottom: 3px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+/* :hover = saat kursor di atas link */
+.menu a:hover {
+    color: #ffd54a;
+    border-bottom-color: #ffd54a;
+}
+
+
+/* =========================================================
+   3. HERO (judul kiri, gambar kanan)
+   ========================================================= */
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;   /* dua kolom sama lebar */
+    align-items: center;
+    gap: 32px;
+    padding: 40px 32px;
+    background: linear-gradient(135deg, #dff1ff 0%, #f3e8ff 55%, #ffe6f1 100%);
+}
+
+.hero-teks {
+    text-align: center;
+}
+
+.hero-teks h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-bottom: 12px;
+
+    /* Teks berwarna gradasi */
+    background: linear-gradient(90deg, var(--biru) 60%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-teks p {
+    color: var(--teks-lembut);
+    margin-bottom: 22px;
+}
+
+.tombol {
+    display: inline-block;
+    padding: 12px 26px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, var(--oranye) 60%);
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 6px 16px rgba(255, 79, 154, 0.35);
+    transition: transform 0.2s;
+}
+
+.tombol:hover {
+    transform: translateY(-2px);   /* tombol naik sedikit saat disentuh kursor */
+}
+
+
+.hero-gambar img {
+    width: 150%;
+    height: 440px;
+    object-fit: cover;              /* gambar memenuhi kotak tanpa gepeng */
+    object-position: center top ;    /* bagian yang dipertahankan: atas (wajah) */
+    border-radius: 24px;            /* sudut membulat */
+    border: 6px solid #ffffff;
+    box-shadow: 0 12px 30px rgba(10, 94, 220, 0.3);
+}
+
+
+/* =========================================================
+   4. JUDUL SECTION (dipakai ulang di About Me & Portofolio)
+   ========================================================= */
+
+.section {
+    padding: 44px 32px;
+}
+
+.section-putih {
+    background: #ffffff;
+}
+
+.section-portofolio {
+    background: linear-gradient(180deg, #eef3fb, #e4ecfb);
+}
+
+.section-judul {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.section-judul h2 {
+    display: inline-block;
+    font-size: 2rem;
+    color: var(--biru);
+    padding-bottom: 6px;
+    border-bottom: 5px solid var(--oranye);
+}
+
+.section-judul p {
+    margin-top: 10px;
+    color: var(--teks-lembut);
+}
+
+
+/* =========================================================
+   5. BIODATA (grid 3 kolom x 2 baris)
+   ========================================================= */
+
+.biodata-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* sama dengan: 1fr 1fr 1fr */
+    gap: 18px;
+    max-width: 1100px;      /* batas lebar di layar besar */
+    margin: 0 auto;         /* auto kiri-kanan = rata tengah */
+}
+
+.kotak {
+    padding: 14px 18px;
+    text-align: center;
+    background: var(--kotak);
+    border-radius: 10px;
+    border-top: 5px solid var(--warna);   /* var(--warna) diisi berbeda tiap kotak (lihat bawah) */
+    box-shadow: 0 2px 6px rgba(31, 42, 68, 0.1);
+}
+
+.kotak b {
+    color: var(--warna);
+}
+
+/* :nth-child(n) = memilih elemen ke-n, dipakai untuk memberi warna berbeda */
+.kotak:nth-child(1) { --warna: var(--biru); }
+.kotak:nth-child(2) { --warna: var(--biru); }
+.kotak:nth-child(3) { --warna: var(--biru); }
+.kotak:nth-child(4) { --warna: var(--biru); }
+.kotak:nth-child(5) { --warna: var(--biru); }
+.kotak:nth-child(6) { --warna: var(--biru); }
+
+
+/* =========================================================
+   6. PORTOFOLIO (grid 3 kolom)
+   ========================================================= */
+
+.portofolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.proyek {
+    overflow: hidden;      /* gambar ikut terpotong mengikuti sudut membulat */
+    text-align: center;
+    background: #ffffff;
+    border-radius: 14px;
+    border-bottom: 5px solid var(--warna);
+    box-shadow: 0 4px 14px rgba(31, 42, 68, 0.15);
+    transition: transform 0.2s;
+}
+
+.proyek:hover {
+    transform: translateY(-4px);
+}
+
+.proyek img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.proyek-isi {
+    padding: 14px 16px 18px;
+}
+
+.proyek-isi h3 {
+    color: var(--warna);
+    font-size: 1.1rem;
+}
+
+.proyek-isi p {
+    color: var(--teks-lembut);
+}
+
+.proyek:nth-child(1) { --warna: var(--oranye); }
+.proyek:nth-child(2) { --warna: var(--biru); }
+.proyek:nth-child(3) { --warna: var(--ungu); }
+
+
+/* =========================================================
+   7. FOOTER
+   ========================================================= */
+
+.footer {
+    padding: 18px 32px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 0.95rem;
+    background: linear-gradient(90deg, var(--biru-tua), var(--biru) 60%, var(--ungu));
+}
+
+
+/* =========================================================
+   8. RESPONSIVE - TABLET
+   @media (max-width: 1024px) = aturan di bawah ini hanya
+   berlaku jika lebar layar 1024px atau kurang.
+   ========================================================= */
+
+@media (max-width: 1024px) {
+
+    .navbar,
+    .hero,
+    .section,
+    .footer {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .hero-teks h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-gambar img {
+        height: 280px;
+    }
+
+    /* 3 kolom -> 2 kolom */
+    .biodata-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .portofolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Proyek ke-3 berada di baris sendiri, ditaruh di tengah */
+    .proyek:nth-child(3) {
+        grid-column: 1 / -1;    /* membentang dari kolom pertama sampai terakhir */
+        width: 50%;
+        justify-self: center;
+    }
+}
+
+
+/* =========================================================
+   9. RESPONSIVE - MOBILE
+   Berlaku jika lebar layar 600px atau kurang.
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    /* Navbar: brand di atas, menu di bawah */
+    .navbar {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 8px;
+        padding: 12px 16px;
+    }
+
+    .menu {
+        gap: 18px;
+    }
+
+    /* Hero: 2 kolom -> 1 kolom (teks di atas, gambar di bawah) */
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 28px 16px;
+    }
+
+    .hero-teks h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-gambar img {
+        height: 300px;
+    }
+
+    .section {
+        padding: 32px 16px;
+    }
+
+    .section-judul h2 {
+        font-size: 1.6rem;
+    }
+
+    /* Biodata & portofolio: 1 kolom */
+    .biodata-grid,
+    .portofolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .proyek:nth-child(3) {
+        width: 100%;
+    }
+
+    .footer {
+        padding: 16px;
+        font-size: 0.85rem;
+    }
+}
